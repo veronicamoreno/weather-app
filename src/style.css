@@ -1,0 +1,106 @@
+body,
+form,
+button {
+  color: #ad4bbe;
+}
+h1 {
+  margin: 20px;
+}
+
+input {
+  padding: 5px 30px 5px 5px;
+  border: solid 1px #ad4bbe;
+  margin: 15px 0px 5px 20px;
+  resize: horizontal;
+  width: 400px;
+}
+
+h3,
+h4,
+h5 {
+  text-align: center;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.65rem;
+}
+h6 {
+  font-size: 40px;
+}
+footer {
+  text-align: center;
+  margin: 20px 0px;
+  font-size: 12px;
+}
+button.current {
+  border: solid 1px #903e9e;
+  background: #fcf8fc;
+  display: block;
+  margin: 15px 0px 5px 20px;
+  padding: 5px 30px 5px 25px;
+}
+button.search {
+  background: #ad4bbe;
+  color: #fcf8fc;
+  border: solid 1px #ad4bbe;
+  padding: 5px 10px;
+  margin-left: -5px;
+}
+
+.fa-map-marker-alt {
+  padding-left: 40px;
+}
+.card {
+  background: #fcf8fc;
+}
+.prediction {
+  text-align: center;
+}
+.prediction i {
+  padding: 10px;
+}
+.units {
+  position: relative;
+  top: -20px;
+  font-size: 1rem;
+}
+.units a {
+  color: #ad4bbe;
+}
+/* Small devices (landscape phones, 580px and up) */
+@media (max-width: 580px) {
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    display: inline;
+  }
+
+  input {
+    resize: horizontal;
+    width: 150px;
+    margin: 1px;
+  }
+
+  button.current {
+    display: inline;
+    padding: 4px 0px 6px 5px;
+    margin: 2px;
+    font-size: 14px;
+  }
+
+  .location-elements {
+    text-align: center;
+  }
+
+  .fa-map-marker-alt {
+    padding: 3px 5px;
+    font-size: large;
+  }
+  .prediction .col-sm {
+    width: 20%;
+  }
+}
