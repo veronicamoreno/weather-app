@@ -133,3 +133,16 @@ updateInnerHTML("#currentTemperature", fahrenheit);
 
   let fahrenheitlink = document.querySelector("#fahrenheit");
   fahrenheitlink.addEventListener("click", fahrenheit);
+
+
+  function Celsius(){
+
+    let currentFahrenheit = String(document.querySelector("#currentTemperature").innerHTML) ;
+    let currentCelsius =Math.round((currentFahrenheit-32)/1.8);
+
+    updateInnerHTML("#currentTemperature", currentCelsius);
+  }
+
+  let celsiusLink = document.querySelector("#celsius");
+  celsiusLink.addEventListener("click", Celsius); 
+
