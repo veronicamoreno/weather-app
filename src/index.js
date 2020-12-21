@@ -34,8 +34,8 @@ function formatDate() {
   return `${day}, ${date} ${month}, ${year}`;
 }
 
-let h4 = document.querySelector("h4");
-h4.innerHTML = formatDate(new Date())
+let h3 = document.querySelector("h3");
+h3.innerHTML = formatDate(new Date())
 
 let hour = now.getHours();
 let minute = now.getMinutes();
@@ -45,8 +45,8 @@ function formatTime(){
   return`${hour} : ${minute} :  ${second}`;
 }
 
-let h5 = document.querySelector("h5");
-h5.innerHTML = formatTime(new Date())
+let h4 = document.querySelector("h4");
+h4.innerHTML = formatTime(new Date())
 
 
 // Add a search engine, when searching for a city, display the city name on the page after the user submits the form.
@@ -76,7 +76,7 @@ function updateHTMLWeatherCity(weather){
     updateInnerHTML("#currentTemperature",temperature);
     updateInnerHTML("#humidity","Humidity: " + humidity + "%");
     updateInnerHTML("#wind","Wind: " + wind + " mph");
-    updateInnerHTML("h3", city);
+    updateInnerHTML("h2", city);
 }
 
 function updateWeatherCity(city){
