@@ -12,6 +12,7 @@ body {
     url("../img/cityscape.svg");
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: 150%;
 }
 
 header {
@@ -52,6 +53,8 @@ h4 {
 }
 h5 {
   font-size: 40px;
+  margin-bottom: 0px;
+  font-weight: 700;
 }
 footer {
   text-align: center;
@@ -104,8 +107,9 @@ button.search {
 }
 
 .container {
+  width: 70%;
   margin: 0px, auto;
-  padding: 30px;
+  padding-top: 20px;
 }
 .logo {
   width: 68px;
@@ -116,14 +120,15 @@ button.search {
   padding-left: 20px;
 }
 .card {
-  background: #fcf8fc;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  backdrop-filter: blur(
+    4px
+  ); /* Note: backdrop-filter has minimal browser support */
+  border-radius: 17px;
 }
-.prediction {
-  text-align: center;
-}
-.prediction i {
-  padding: 10px;
-}
+
 .units {
   position: relative;
   top: -20px;
@@ -132,10 +137,58 @@ button.search {
 .units a {
   color: #025ba3;
 }
+.weather-elements {
+  margin-top: 75px;
+  margin-left: 25px;
+}
+.weather-element-temp {
+  margin-top: 30px;
+  margin-right: 25px;
+}
+.clouddy {
+  width: 50%;
+  margin: 0, auto;
+}
+
+.prediction {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+.forecast-row {
+  margin-top: 40px;
+}
+
+.prediction p {
+  width: 127px;
+  height: 142px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(
+    4px
+  ); /* Note: backdrop-filter has minimal browser support */
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.col-sm img {
+  width: 50%;
+  margin: 0, auto;
+}
+
 /* Small devices (landscape phones, 580px and up) */
 @media (max-width: 580px) {
   h1 {
     text-align: center;
+    display: block;
+    padding: 0px;
+    margin: 0px;
   }
 
   form {
@@ -154,8 +207,20 @@ button.search {
     margin: 2px;
     font-size: 14px;
   }
+  .container {
+    width: 100%;
+    margin: 0px, auto;
+    padding-top: 20px;
+  }
+  .logo {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: auto;
+  }
 
   .location-elements {
+    margin: 0px, auto;
     text-align: center;
   }
 
@@ -163,7 +228,31 @@ button.search {
     padding: 3px 5px;
     font-size: large;
   }
-  .prediction .col-sm {
-    width: 20%;
+
+  .weather-elements {
+    margin-top: 75px;
+    margin-left: 25px;
+  }
+  .weather-element-temp {
+    margin-top: 30px;
+    margin-right: 25px;
+  }
+  .prediction {
+    text-align: center;
+    width: 90%;
+  }
+  .forecast-row {
+    margin-top: 20px;
+  }
+  .forecast {
+    width: 19%;
+  }
+  .col-sm img {
+    width: 150%;
+    margin: 0, auto;
+  }
+  .prediction p {
+    width: 66.48px;
+    height: 129px;
   }
 }

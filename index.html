@@ -56,11 +56,11 @@
               <h3>Tuesday, 24 Nov 2020</h3>
               <h4></h4>
               <div class="row">
-                <div class="col mt-5 ml-5">
-                  <p class="card-text" id="humidity">Humidity: 80%</p>
-                  <p class="card-text" id="wind">Wind: 10 mph</p>
+                <div class="col weather-elements">
+                  <p id="humidity">Humidity: 80%</p>
+                  <p id="wind">Wind: 10 mph</p>
                 </div>
-                <div class="col mt-4 text-center">
+                <div class="col text-center weather-element-temp">
                   <h5>
                     <span id="currentTemperature">9</span>
                     <span class="units"
@@ -68,7 +68,11 @@
                       <a href="#" id="fahrenheit">°F</a></span
                     >
                   </h5>
-                  <i class="fas fa-cloud fa-5x"></i> <br />
+                  <img
+                    class="clouddy"
+                    src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57061/cloud-emoji-clipart-md.png"
+                    alt="clouddy"
+                  />
                 </div>
               </div>
             </div>
@@ -77,35 +81,56 @@
       </div>
     </div>
     <div class="prediction">
-      <div class="row mt-5 mr-1 ml-1">
-        <div class="col-sm">
+      <div class="row forecast-row">
+        <div class="col-sm forecast">
           <p>
             Wed <br />
-            <i class="fas fa-cloud fa-2x"></i> <br />12°C
+            <img
+              class="clouddy"
+              src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57061/cloud-emoji-clipart-md.png"
+              alt="clouddy"
+            />
+            <br />12°C
           </p>
         </div>
-        <div class="col-sm">
+        <div class="col-sm forecast">
           <p>
             Thu<br />
-            <i class="fas fa-cloud-sun fa-2x"></i> <br />9°C
+            <img
+              src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57172/sun-behind-large-cloud-emoji-clipart-md.png"
+              alt="clouddy and sunny"
+            />
+            <br />9°C
           </p>
         </div>
-        <div class="col-sm">
+        <div class="col-sm forecast">
           <p>
             Fri <br />
-            <i class="fas fa-sun fa-2x"></i> <br />7°C
+            <img
+              src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/56846/sun-emoji-clipart-md.png"
+              alt="sunny"
+            />
+            <br />7°C
           </p>
         </div>
-        <div class="col-sm">
+        <div class="col-sm forecast">
           <p>
             Sat <br />
-            <i class="fas fa-cloud-showers-heavy fa-2x"></i> <br />7°C
+            <img
+              src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/56369/cloud-with-rain-emoji-clipart-md.png"
+              alt="rainy"
+            />
+            <br />7°C
           </p>
         </div>
-        <div class="col-sm">
+        <div class="col-sm forecast">
           <p>
             Sun <br />
-            <i class="fas fa-sun fa-2x"></i> <br />6°C
+            <img
+              src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/56846/sun-emoji-clipart-md.png"
+              alt="sunny"
+            />
+            <br />6°C
           </p>
         </div>
       </div>
