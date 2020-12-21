@@ -201,6 +201,10 @@ button.search {
     margin: 1px;
   }
 
+  footer {
+    margin: 0px;
+  }
+
   button.current {
     display: inline;
     padding: 4px 0px 6px 5px;
