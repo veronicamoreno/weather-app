@@ -55,6 +55,7 @@ h4.innerHTML = formatTime(new Date())
 let apiKey = "7b0d44840db905a5258c2af1da0defe7";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&appid=" + apiKey;
 
+
 function capitaliseString(input){
     let output = input.trim().toLowerCase();
     output = output[0].toUpperCase() + output.slice(1);
@@ -72,11 +73,13 @@ function updateHTMLWeatherCity(weather){
     let wind = weather.data.wind.speed;
     let city = weather.data.name;
     wind = Math.round(wind)
+    let icon = document.querySelector("#icon");
 
     updateInnerHTML("#currentTemperature",temperature);
     updateInnerHTML("#humidity","Humidity: " + humidity + "%");
     updateInnerHTML("#wind","Wind: " + wind + " mph");
     updateInnerHTML("h2", city);
+    icon.setAttribute("src", `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`);
 }
 
 function updateWeatherCity(city){
@@ -146,3 +149,4 @@ updateInnerHTML("#currentTemperature", fahrenheit);
   let celsiusLink = document.querySelector("#celsius");
   celsiusLink.addEventListener("click", Celsius); 
 
+  

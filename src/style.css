@@ -121,12 +121,13 @@ button.search {
 }
 .card {
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    rgba(255, 255, 255, 0.2);
+    rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   backdrop-filter: blur(
     4px
   ); /* Note: backdrop-filter has minimal browser support */
   border-radius: 17px;
+  border: 1px solid #ffffff;
 }
 
 .units {
@@ -146,7 +147,7 @@ button.search {
   margin-right: 25px;
 }
 .clouddy {
-  width: 50%;
+  width: 70%;
   margin: 0, auto;
 }
 
@@ -163,16 +164,13 @@ button.search {
 .prediction p {
   width: 127px;
   height: 142px;
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    rgba(255, 255, 255, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
+    rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
   backdrop-filter: blur(
     4px
   ); /* Note: backdrop-filter has minimal browser support */
-  border-radius: 20px;
+  border-radius: 17px;
   text-align: center;
   padding: 20px;
 }
