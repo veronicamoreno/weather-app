@@ -1,5 +1,6 @@
 body {
-  font-family: Open Sans, normal;
+  font-family: Open Sans;
+  font-weight: lighter;
   color: #025ba3;
   background-image: linear-gradient(
       180deg,
@@ -56,6 +57,10 @@ h5 {
   margin-bottom: 0px;
   font-weight: 700;
 }
+p::first-letter {
+  text-transform: capitalize;
+}
+
 footer {
   text-align: center;
   margin: 20px 0px;
@@ -141,6 +146,7 @@ button.search {
 .weather-elements {
   margin-top: 75px;
   margin-left: 25px;
+  margin-bottom: 0px;
 }
 .weather-element-temp {
   margin-top: 30px;

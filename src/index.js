@@ -69,6 +69,7 @@ function updateInnerHTML(element, value){
 function updateHTMLWeatherCity(weather){
     let temperature = weather.data.main.temp;
     temperature = Math.round(temperature);
+    let description = weather.data.weather[0].description;
     let humidity = weather.data.main.humidity;
     let wind = weather.data.wind.speed;
     let city = weather.data.name;
@@ -76,6 +77,7 @@ function updateHTMLWeatherCity(weather){
     let icon = document.querySelector("#icon");
 
     updateInnerHTML("#currentTemperature",temperature);
+    updateInnerHTML("#description", description);
     updateInnerHTML("#humidity","Humidity: " + humidity + "%");
     updateInnerHTML("#wind","Wind: " + wind + " mph");
     updateInnerHTML("h2", city);
