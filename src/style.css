@@ -147,6 +147,7 @@ button.search {
   margin-top: 75px;
   margin-left: 25px;
   margin-bottom: 0px;
+  line-height: 5px;
 }
 .weather-element-temp {
   margin-top: 30px;
