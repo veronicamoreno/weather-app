@@ -93,7 +93,7 @@ function updateWeatherCity(city){
 function getWeatherCity(event){
     let searchInput = document.querySelector("#search");
     let city = capitaliseString(searchInput.value);
-
+    searchInput.value = "";
     updateWeatherCity(city);
 }
 
@@ -202,4 +202,6 @@ function updateForecast(city){
 }
 
 //default initial city
+if(document.querySelector("h2").innerHTML == ""){
 updateWeatherCity('London');
+}
