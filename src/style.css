@@ -1,6 +1,5 @@
 body {
   font-family: Open Sans;
-  font-weight: lighter;
   color: #025ba3;
   background-image: linear-gradient(
       180deg,
@@ -13,7 +12,7 @@ body {
     url("../img/cityscape.svg");
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 150%;
+  background-size: 200%;
 }
 
 header {
@@ -54,16 +53,13 @@ h4 {
 }
 h5 {
   font-size: 40px;
-  margin-bottom: 0px;
+  margin: 0px;
   font-weight: 700;
-}
-p::first-letter {
-  text-transform: capitalize;
 }
 
 footer {
   text-align: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
   font-size: 12px;
 }
 button.current {
@@ -126,13 +122,14 @@ button.search {
 }
 .card {
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    rgba(0, 0, 0, 0.3);
+    rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   backdrop-filter: blur(
     4px
   ); /* Note: backdrop-filter has minimal browser support */
   border-radius: 17px;
   border: 1px solid #ffffff;
+  height: 300px;
 }
 
 .units {
@@ -149,13 +146,21 @@ button.search {
   margin-bottom: 0px;
   line-height: 5px;
 }
+.weather-elements p {
+  font-size: 14px;
+}
+p::first-letter {
+  text-transform: capitalize;
+}
+
 .weather-element-temp {
   margin-top: 30px;
   margin-right: 25px;
 }
 .clouddy {
-  width: 70%;
+  width: 90%;
   margin: 0, auto;
+  padding: 0px;
 }
 
 .prediction {
@@ -170,32 +175,43 @@ button.search {
 
 .prediction p {
   width: 127px;
-  height: 142px;
+  height: 170px;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%),
-    rgba(0, 0, 0, 0.3);
+    rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   backdrop-filter: blur(
     4px
   ); /* Note: backdrop-filter has minimal browser support */
   border-radius: 17px;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  font-size: 14px;
 }
-
+.icon {
+  padding: 0px;
+  margin: 0px;
+}
 .col-sm img {
-  width: 50%;
+  width: 100%;
   margin: 0, auto;
 }
 
 /* Small devices (landscape phones, 580px and up) */
 @media (max-width: 580px) {
-  h1 {
+  header {
     text-align: center;
-    display: block;
-    padding: 0px;
-    margin: 0px;
   }
 
+  h1 {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    font-size: 40px;
+  }
+  h2 {
+    font-weight: bold;
+  }
   form {
     display: inline;
   }
@@ -207,7 +223,7 @@ button.search {
   }
 
   footer {
-    margin: 0px;
+    margin: 15px;
   }
 
   button.current {
@@ -222,9 +238,8 @@ button.search {
     padding-top: 20px;
   }
   .logo {
-    display: block;
     margin: auto;
-    width: 100px;
+    width: 25%;
     height: auto;
   }
 
@@ -238,12 +253,16 @@ button.search {
     font-size: large;
   }
 
+  .col-lg {
+    padding-top: 25px;
+  }
   .weather-elements {
-    margin-top: 75px;
+    margin-top: 70px;
     margin-left: 25px;
   }
+
   .weather-element-temp {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-right: 25px;
   }
   .prediction {
@@ -256,12 +275,22 @@ button.search {
   .forecast {
     width: 19%;
   }
-  .col-sm img {
-    width: 150%;
+  .forecast-time {
+    font-size: 12px;
+  }
+  .forecast-temp {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .icon {
     margin: 0, auto;
+    padding: 0px;
   }
   .prediction p {
-    width: 66.48px;
-    height: 129px;
+    width: 67px;
+    height: 120px;
+    padding: 0px;
+    margin-bottom: 0px;
   }
 }

@@ -180,15 +180,15 @@ function displayForecast(response){
     forecastElement.innerHTML += `
             <div class="col-sm forecast">
               <p> <span class = "forecast-time">
-                ${formatHours(forecast.dt * 1000)}<br />
+                ${formatHours(forecast.dt * 1000)}</span><br />
                 <img
-                  class="clouddy"
+                  class="icon"
                   src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
                   alt=""
                 />
-                <br />
-                <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°
-              </p>
+                <br /><span class = "forecast-temp">
+                <strong>${Math.round(forecast.main.temp_max)}°</strong>'/${Math.round(forecast.main.temp_min)}°
+              </span></p>
             </div>
 
     `;
