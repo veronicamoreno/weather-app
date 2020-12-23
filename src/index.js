@@ -82,11 +82,13 @@ function updateHTMLWeatherCity(weather){
     updateInnerHTML("#wind","Wind: " + wind + " mph");
     updateInnerHTML("h2", city);
     icon.setAttribute("src", `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`);
+    updateForecast(city);
 }
 
 function updateWeatherCity(city){
     axios.get(`${apiUrl}&q=${city}`).then(updateHTMLWeatherCity);
 }
+
 
 function getWeatherCity(event){
     event.preventDefault();
@@ -151,4 +153,53 @@ updateInnerHTML("#currentTemperature", fahrenheit);
   let celsiusLink = document.querySelector("#celsius");
   celsiusLink.addEventListener("click", Celsius); 
 
+
+  // Display forecast
+
+function formatHours(timestamp){
+let date = new Date(timestamp);
+let hours = date.getHours();
+if (hours < 10){
+  hours = `${hours}`;
+}
+let minutes = date.getMinutes();
+if (minutes < 10){
+  minutes = `0${minutes}`;
+}
+  return `${hours} : ${minutes}`;
+}
+
+function displayForecast(response){
   
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index =0; index < 5; index++){
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+            <div class="col-sm forecast">
+              <p> <span class = "forecast-time">
+                ${formatHours(forecast.dt * 1000)}<br />
+                <img
+                  class="clouddy"
+                  src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+                  alt=""
+                />
+                <br />
+                <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°
+              </p>
+            </div>
+
+    `;
+  }
+}
+
+ let forecastApiUrl = "https://api.openweathermap.org/data/2.5/forecast?&units=metric&appid="+ apiKey;
+
+function updateForecast(city){
+  axios.get(`${forecastApiUrl}&q=${city}`).then(displayForecast);
+}
+
+//default initial city
+updateWeatherCity('London');
