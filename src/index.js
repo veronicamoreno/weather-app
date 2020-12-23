@@ -58,7 +58,9 @@ let apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&appi
 
 function capitaliseString(input){
     let output = input.trim().toLowerCase();
+    if(output != ""){
     output = output[0].toUpperCase() + output.slice(1);
+    }
     return output;
 }
 
@@ -81,7 +83,7 @@ function updateHTMLWeatherCity(weather){
     updateInnerHTML("#humidity","Humidity: " + humidity + "%");
     updateInnerHTML("#wind","Wind: " + wind + " mph");
     updateInnerHTML("h2", city);
-    icon.setAttribute("src", `http://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`);
+    icon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`);
     updateForecast(city);
 }
 
@@ -94,7 +96,9 @@ function getWeatherCity(event){
     let searchInput = document.querySelector("#search");
     let city = capitaliseString(searchInput.value);
     searchInput.value = "";
+    if(city != ""){
     updateWeatherCity(city);
+    }
 }
 
 let form = document.querySelector("#search-button");
@@ -103,8 +107,8 @@ form.addEventListener("click", getWeatherCity);
 
 // Add a Current Location button. 
 // When clicking on it, it uses the Geolocation API to get your GPS coordinates and display the city and current temperature using the OpenWeather API.
-let latitude;
-let longitude;
+let latitude="";
+let longitude="";
 
 function getPosition(position){
     latitude = position.coords.latitude;
@@ -112,7 +116,9 @@ function getPosition(position){
 }
 
 function updateWeatherLocation(latitude, longitude){
+  if(latitude != "" && latitude != undefined && longitude !="" && longitude !=undefined){
     axios.get(`${apiUrl}&lat=${latitude}&lon=${longitude}`).then(updateHTMLWeatherCity);
+  }
 }
 
 function getWeatherLocation(){
@@ -183,7 +189,7 @@ function displayForecast(response){
                 ${formatHours(forecast.dt * 1000)}</span><br />
                 <img
                   class="icon"
-                  src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+                  src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
                   alt=""
                 />
                 <br /><span class = "forecast-temp">
