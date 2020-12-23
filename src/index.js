@@ -85,6 +85,7 @@ function updateHTMLWeatherCity(weather){
     updateInnerHTML("h2", city);
     icon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`);
     updateForecast(city);
+    tempUnit = "c";
 }
 
 function updateWeatherCity(city){
