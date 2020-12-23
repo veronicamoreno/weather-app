@@ -91,8 +91,6 @@ function updateWeatherCity(city){
 
 
 function getWeatherCity(event){
-    event.preventDefault();
-
     let searchInput = document.querySelector("#search");
     let city = capitaliseString(searchInput.value);
 
@@ -118,8 +116,6 @@ function updateWeatherLocation(latitude, longitude){
 }
 
 function getWeatherLocation(){
-    // event.preventDefault();
-
     navigator.geolocation.getCurrentPosition(getPosition);
     updateWeatherLocation(latitude, longitude);
 }
@@ -128,31 +124,35 @@ let currentLocation = document.querySelector("#geolocation");
 currentLocation.addEventListener("click", getWeatherLocation);
 
   // Display temperature in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. 
+let tempUnit = "c";
 
 function fahrenheit(){
 
+  if(tempUnit != "f"){
 let celsius = String(document.querySelector("#currentTemperature").innerHTML);
 let fahrenheit = Math.round((celsius * 9) / 5 + 32);
 
 updateInnerHTML("#currentTemperature", fahrenheit);
-
+tempUnit = "f";
+  }
 }
 
   let fahrenheitlink = document.querySelector("#fahrenheit");
   fahrenheitlink.addEventListener("click", fahrenheit);
 
-
   function Celsius(){
 
+   if(tempUnit != "c"){
     let currentFahrenheit = String(document.querySelector("#currentTemperature").innerHTML) ;
     let currentCelsius =Math.round((currentFahrenheit-32)/1.8);
 
     updateInnerHTML("#currentTemperature", currentCelsius);
+    tempUnit = "c";
+   }
   }
 
   let celsiusLink = document.querySelector("#celsius");
-  celsiusLink.addEventListener("click", Celsius); 
-
+  celsiusLink.addEventListener("click", Celsius);
 
   // Display forecast
 
